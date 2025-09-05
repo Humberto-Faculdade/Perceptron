@@ -1,54 +1,35 @@
-Perceptron Simples - Porta AND
+# Perceptron Simples - Porta AND  
 
-Esse projeto é um experimento básico em Python para treinar um perceptron a aprender a porta lógica AND.
-A ideia foi implementar tudo do zero, sem usar bibliotecas de machine learning, só para entender melhor como funciona o processo de aprendizado.
+Este projeto implementa um perceptron do zero em Python para aprender a porta lógica **AND**.  
+A ideia foi treinar o modelo usando apenas operações matemáticas básicas, sem bibliotecas externas de machine learning.  
 
-O que o código faz
+---
 
-Cria os dados da porta AND (as combinações de 0 e 1 e seus resultados).
+##  Como funciona  
 
-Inicializa pesos e bias com valores aleatórios.
+- Dados usados: tabela verdade da porta AND  
+- Inicialização aleatória dos pesos e bias  
+- Função de ativação: degrau (step function)  
+- Ajuste dos pesos feito a cada época com base no erro  
+- No final, o perceptron consegue prever corretamente todas as entradas  
 
-Usa uma função de ativação do tipo degrau para decidir entre 0 e 1.
+Tabela verdade usada:  
 
-Treina o perceptron ajustando os pesos a cada época.
+| Entrada 1 | Entrada 2 | Saída |
+|-----------|-----------|-------|
+| 0         | 0         | 0     |
+| 0         | 1         | 0     |
+| 1         | 0         | 0     |
+| 1         | 1         | 1     |
 
-No final, mostra os pesos aprendidos e testa as previsões com todos os casos possíveis.
+---
 
-Tabela verdade da porta AND usada:
+##  Como executar  
 
-Entrada 1	Entrada 2	Saída
-0	0	0
-0	1	0
-1	0	0
-1	1	1
-Como rodar
+1. Instale o **Python 3**.  
+2. Salve o código em um arquivo `perceptron_and.py`.  
+3. No terminal, rode:  
 
-Ter o Python 3 instalado.
-
-Salvar o código em um arquivo, por exemplo perceptron_and.py.
-
-No terminal, executar:
-
+```bash
 python perceptron_and.py
 
-Exemplo de saída
-Época 1 - Erro total: 3
-Época 2 - Erro total: 2
-...
-Época 10 - Erro total: 0
-
-Pesos finais: [0.2, 0.2]
-Bias final: -0.3
-Entrada: [0, 0] => Saída prevista: 0
-Entrada: [0, 1] => Saída prevista: 0
-Entrada: [1, 0] => Saída prevista: 0
-Entrada: [1, 1] => Saída prevista: 1
-
-Ideias para melhorar
-
-Testar outras portas lógicas (OR, NAND, etc).
-
-Usar funções de ativação diferentes.
-
-Tentar expandir para resolver XOR com múltiplas camadas.
