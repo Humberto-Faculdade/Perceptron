@@ -1,4 +1,4 @@
-# 🧠 Perceptron - Implementação da Porta AND
+#  Perceptron - Implementação da Porta AND
 
 ## 1. Conceito
 O **Perceptron** é o modelo mais simples de rede neural artificial, criado por Frank Rosenblatt em 1958.
