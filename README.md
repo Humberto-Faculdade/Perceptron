@@ -72,17 +72,14 @@
   Pergunta: Dê um exemplo real em que o uso de um modelo simples como o Perceptron poderia ser útil.
   Justifique sua escolha.
 
-  Um exemplo prático seria em um sistema de controle de qualidade industrial muito simples.
+ Um exemplo prático seria um filtro de spam de e-mail muito básico.
 
-  - Cenário: Imagine uma esteira que produz peças de metal que devem ter um peso mínimo (X) e um comprimento
-   máximo (Y) para serem aprovadas. Peças fora dessa especificação devem ser descartadas.
-  - Aplicação do Perceptron: Um Perceptron poderia ser treinado para tomar a decisão "Aprovar" (1) ou
-  "Rejeitar" (0). As duas entradas seriam o peso e o comprimento da peça. O modelo aprenderia a traçar uma
-  "linha de decisão" que separa as peças boas das defeituosas.
 
-  - Justificativa: A escolha se justifica porque o problema é linear e binário. A decisão é simples
-  (sim/não) e baseada em regras claras que podem ser representadas por uma fronteira linear. Para uma tarefa
-   tão específica, usar um modelo complexo como uma rede neural profunda seria computacionalmente
-  desnecessário e caro. O Perceptron oferece uma solução eficiente, rápida e de fácil implementação para
-  este tipo de problema.
-  `
+     - Cenário: Imagine que precisamos classificar e-mails como "Spam" ou "Não Spam" com base em regras
+       simples. As entradas (features) poderiam ser: a presença da palavra "grátis" no assunto, se o remetente
+        é desconhecido e a proporção de texto em maiúsculas.
+     - Justificativa: A escolha se justifica porque o problema é uma classificação binária que pode ser
+       aproximada de forma linear. Para uma filtragem inicial, a decisão é simples (spam/não spam) e não exige
+        a compreensão de padrões complexos de linguagem. O Perceptron é computacionalmente leve, rápido e
+       fácil de implementar, sendo ideal para tarefas de pré-classificação ou em ambientes com recursos
+       limitados, onde um modelo mais pesado como uma rede neural profunda seria desnecessário e custoso.
