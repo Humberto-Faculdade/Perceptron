@@ -1,85 +1,74 @@
- # Relatório do Projeto: Perceptron para Porta Lógica AND
 
-  Este README serve como um relatório técnico, respondendo às questões propostas sobre a implementação do
-  algoritmo Perceptron.
+  # Perceptron para Porta Lógica AND
 
-  ---
-
-  ### 1. Conceito
-
-  Pergunta: Explique, com suas palavras, o que é um Perceptron e qual a sua importância histórica para o
-  desenvolvimento da Inteligência Artificial.
-
-  O Perceptron, criado por Frank Rosenblatt em 1958, é um dos primeiros e mais fundamentais modelos de rede
-  neural artificial. Ele simula um único neurônio que recebe diversas entradas, atribui pesos a elas e, com
-  base na soma ponderada desses valores, produz uma saída binária (0 ou 1).
-
-  Sua importância histórica é imensa porque foi o primeiro algoritmo a provar que uma máquina poderia
-  aprender com a experiência. Ao ajustar seus pesos para corrigir erros, o Perceptron demonstrou a
-  viabilidade do aprendizado supervisionado, estabelecendo os alicerces teóricos e a inspiração para o
-  desenvolvimento de redes neurais mais complexas e, eventualmente, para toda a área de Deep Learning.
+  Este projeto demonstra a implementação de um algoritmo Perceptron, um dos modelos fundamentais de redes
+  neurais, para resolver o problema da porta lógica AND. O relatório a seguir detalha os conceitos, o
+  funcionamento e a aplicação do modelo.
 
   ---
 
-  ### 2. Funcionamento
+  ### 1. O que é um Perceptron?
 
-  Pergunta: O Perceptron é considerado um classificador linear. O que isso significa? Quais são as
-  limitações desse tipo de modelo?
+  O Perceptron é um algoritmo de aprendizado de máquina criado por Frank Rosenblatt em 1958, inspirado no
+  funcionamento de um único neurônio. Ele recebe múltiplas entradas, associa um peso a cada uma delas e, a
+  partir da soma ponderada, gera uma saída binária (0 ou 1).
 
-  Dizer que o Perceptron é um classificador linear significa que ele só consegue resolver problemas cujas
-  classes de dados podem ser separadas por uma única linha reta (ou um hiperplano, em múltiplas dimensões).
-  Ele literalmente "traça uma linha" no espaço de dados para dividir os pontos em duas categorias. As portas
-   lógicas AND e OR são exemplos clássicos de problemas linearmente separáveis.
-
-  As limitações do modelo derivam diretamente dessa característica:
-  - Incapacidade de resolver problemas não-lineares: A limitação mais famosa é a falha em resolver a porta
-  lógica XOR, pois não existe uma única linha reta que consiga separar corretamente as saídas desse
-  problema.
-  - Baixa capacidade de generalização: Por ser muito simples, o modelo não captura padrões complexos,
-  tornando-o inadequado para a maioria dos problemas do mundo real sem o uso de arquiteturas mais avançadas,
-   como redes com múltiplas camadas (MLPs).
+  Sua relevância histórica está em ser o primeiro modelo a demonstrar que uma máquina poderia aprender com a
+   experiência de forma supervisionada. Ao ajustar seus pesos para minimizar erros, o Perceptron estabeleceu
+   a base teórica que abriu caminho para as redes neurais complexas e para o campo de Deep Learning.
 
   ---
 
-  ### 3. Código
+  ### 2. Como o Perceptron Funciona?
 
-  Pergunta: Ao analisar o código que você executou, quais foram as etapas principais do processo de
-  treinamento do Perceptron?
+  O Perceptron é um classificador linear. Isso significa que sua função é encontrar uma única linha (ou um
+  hiperplano, em mais de duas dimensões) que consiga separar os dados em duas classes distintas. Problemas
+  como as portas lógicas AND e OR são exemplos clássicos de cenários linearmente separáveis.
 
-  O processo de treinamento no código implementado seguiu estas etapas essenciais:
+  As limitações do modelo são uma consequência direta dessa característica:
 
-  1.  Definição dos Dados: Foram estabelecidos os dados de entrada e as saídas esperadas, correspondentes à
-  tabela-verdade da porta lógica AND.
-  2.  Inicialização: Os pesos sinápticos e o valor do bias foram iniciados com valores numéricos pequenos e
-  aleatórios.
-  3.  Cálculo da Saída: Para cada conjunto de entradas, a saída da rede foi calculada. Isso envolveu a soma
-  ponderada das entradas e a aplicação de uma função de ativação degrau (step function) para produzir a
-  saída binária (0 ou 1).
-  4.  Cálculo do Erro: A saída prevista pelo modelo foi comparada com a saída realmente esperada para
-  determinar o erro.
-  5.  Ajuste dos Pesos e Bias: Com base no erro, os pesos e o bias foram reajustados de acordo com a regra
-  de aprendizado do Perceptron, de modo a aproximar o modelo da resposta correta.
-  6.  Iteração (Épocas): O processo foi repetido por um número definido de "épocas" (ciclos de treinamento),
-   garantindo que o modelo fosse exposto aos dados múltiplas vezes até que o erro fosse minimizado ou
-  zerado.
-  7.  Validação: Após o treinamento, o modelo foi testado para confirmar sua capacidade de prever
-  corretamente a saída para todas as combinações de entrada da porta AND.
+  - Problemas Não-Lineares: Sua limitação mais conhecida é a incapacidade de resolver a porta lógica XOR,
+  pois não há uma única linha reta capaz de dividir corretamente as saídas do problema.
+  - Generalização Limitada: Por ser um modelo simples, ele não consegue capturar padrões complexos, o que o
+  torna inadequado para a maioria dos problemas do mundo real, que exigem arquiteturas mais robustas como as
+   Redes Neurais de Múltiplas Camadas (MLPs).
 
   ---
 
-  ### 4. Aplicação Prática
+  ### 3. Etapas do Treinamento no Código
 
-  Pergunta: Dê um exemplo real em que o uso de um modelo simples como o Perceptron poderia ser útil.
-  Justifique sua escolha.
+  O processo de treinamento implementado neste projeto seguiu 6 etapas principais:
 
- Um exemplo prático seria um filtro de spam de e-mail muito básico.
+  1.  Estruturação dos Dados: Definição das entradas e saídas esperadas, seguindo a tabela-verdade da porta
+  AND.
+  2.  Inicialização de Pesos e Bias: Atribuição de valores numéricos, pequenos e aleatórios, para os pesos
+  sinápticos e o bias.
+  3.  Cálculo da Previsão: Para cada entrada, a saída da rede foi calculada usando a soma ponderada e uma
+  função de ativação degrau (step function).
+  4.  Avaliação do Erro: A saída prevista pelo modelo foi comparada com a saída esperada para quantificar o
+  erro.
+  5.  Ajuste dos Parâmetros: Com base no erro, os pesos e o bias foram reajustados para aproximar o modelo
+  da resposta correta.
+  6.  Repetição (Épocas): O ciclo foi repetido por um número definido de épocas, garantindo que o modelo
+  aprendesse com os dados até minimizar ou zerar o erro.
 
+  Ao final, o modelo treinado foi validado para confirmar sua capacidade de prever corretamente todas as
+  saídas da porta AND.
 
-     - Cenário: Imagine que precisamos classificar e-mails como "Spam" ou "Não Spam" com base em regras
-       simples. As entradas (features) poderiam ser: a presença da palavra "grátis" no assunto, se o remetente
-        é desconhecido e a proporção de texto em maiúsculas.
-     - Justificativa: A escolha se justifica porque o problema é uma classificação binária que pode ser
-       aproximada de forma linear. Para uma filtragem inicial, a decisão é simples (spam/não spam) e não exige
-        a compreensão de padrões complexos de linguagem. O Perceptron é computacionalmente leve, rápido e
-       fácil de implementar, sendo ideal para tarefas de pré-classificação ou em ambientes com recursos
-       limitados, onde um modelo mais pesado como uma rede neural profunda seria desnecessário e custoso.
+  ---
+
+  ### 4. Exemplo de Aplicação: Filtro de Spam Simplificado
+
+  Um caso de uso ideal para o Perceptron é a criação de um filtro de spam de e-mail de baixa complexidade.
+
+  - Cenário: Classificar e-mails como "Spam" ou "Não Spam".
+  - Features (Entradas):
+      - Presença de palavras-chave ("grátis", "promoção").
+      - O remetente é desconhecido.
+      - Uso excessivo de texto em maiúsculas.
+  - Justificativa:
+    É uma tarefa de classificação binária (Spam/Não Spam) que pode ser resolvida de forma linear para uma
+  primeira camada de defesa. O Perceptron é rápido, leve e fácil de treinar, tornando-o perfeito para
+  sistemas com recursos limitados ou como um classificador base em um sistema mais complexo, onde a
+  velocidade é mais importante que a precisão absoluta.
+  `
